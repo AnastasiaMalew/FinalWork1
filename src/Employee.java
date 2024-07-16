@@ -35,6 +35,9 @@ public class Employee {
         return this.thirdName;
     }
 
+    public int getSalary() {
+        return this.salary;
+    }
     public int setDepartment(int department) {
         this.department = department;
         return department;
@@ -59,4 +62,3 @@ public class Employee {
     }
 
 }
-
