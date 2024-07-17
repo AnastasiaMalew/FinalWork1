@@ -10,34 +10,63 @@ import java.util.Arrays;
         };
 
         public static void main(String[] args) {
+            printEmployees();
+            printSumSalary();
+            printMinSalary();
+            printMaxSalary();
+            printMiddleSalary();
+            printNameEmployers();
+        }
+
+        private static void printEmployees() {
+            for (Employee employee : employees) {
+                System.out.println(employee);
+            }
+        }
+
+        private static void printSumSalary() {
             double sumSalary = 0;
             for (int i = 0; i <= employees.length - 1; i++) {
                 sumSalary += employees[i].getSalary();
             }
             System.out.println("Сумма трат за месяц составила " + sumSalary + " рублей");
+        }
 
-
+        private static void printMinSalary() {
             double minSalary = employees[0].getSalary();
             for (int i = 0; i < employees.length - 1; i++) {
                 if (employees[i].getSalary() != 0 && employees[i].getSalary() < minSalary) {
                     minSalary = employees[i].getSalary();
-                    System.out.println("Сотрудник с минимальной зарплатой " + minSalary + " рублей");}
+                    System.out.println("Минимальная зарплата " + minSalary + " рублей");
+                }
             }
+        }
 
+        private static void printMaxSalary() {
             double maxSalary = employees[0].getSalary();
             for (int i = 0; i < employees.length - 1; i++) {
                 if (employees[i].getSalary() > maxSalary) {
                     maxSalary = employees[i].getSalary();
-                    System.out.println("Минимальная зарплата за месяц составила " + maxSalary + " рублей");}
-            }
-
-            double middleSalary = sumSalary / employees.length;
-            System.out.println("Cреднее значение зарплат сотрудников: " + middleSalary + " рублей");
-
-            System.out.println("Список сотрудников:");
-            for (int i = 0; i < employees.length; i++) {
-                System.out.println(employees[i].getFirstName() + " " + employees[i].getSecondName() + " " + employees[i].getThirdName());
+                    System.out.println("Vаксимальная зарплата " + maxSalary + " рублей");
+                }
             }
         }
 
+        private static void printMiddleSalary() {
+            double sumSalary = 0;
+            for (int i = 0; i <= employees.length - 1; i++) {
+                sumSalary += employees[i].getSalary();
+            }double middleSalary = sumSalary / employees.length;
+                System.out.println("Cреднее значение зарплат сотрудников: " + middleSalary + " рублей");
+            }
+
+
+        private static void printNameEmployers() {
+            System.out.println("Список сотрудников:");
+            for (int a = 0; a < employees.length; a++) {
+                System.out.println(employees[a].getFirstName() + " " + employees[a].getSecondName() + " " + employees[a].getThirdName());
+            }
+        }
     }
+
+
